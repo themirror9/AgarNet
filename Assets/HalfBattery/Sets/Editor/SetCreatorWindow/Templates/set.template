@@ -1,0 +1,7 @@
+{usings}
+
+namespace {namespace}
+{
+    [CreateAssetMenu(menuName = "{assetPath}")]
+    public class {name}Set : Set<{type}> { }
+}

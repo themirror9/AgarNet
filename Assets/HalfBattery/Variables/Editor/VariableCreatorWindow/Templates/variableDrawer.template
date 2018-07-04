@@ -1,0 +1,9 @@
+using UnityEditor;
+using UnityEngine;
+{usings}
+
+namespace {namespace}
+{
+    [CustomPropertyDrawer(typeof({name}Reference))] 
+    public class {name}ReferenceDrawer: VariableReferenceDrawer<{name}Reference> {}
+}

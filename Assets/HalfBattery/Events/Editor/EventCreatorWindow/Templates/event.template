@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+{using}
+
+namespace {namespace}
+{
+    [CreateAssetMenu(menuName = "{assetPath}")]
+    public class {eventName}EventReference : EventReference<{types}> { }
+
+    [Serializable]
+    public class {eventName}EventContainer
+    {
+        public List<{eventName}EventReference> events = new List<{eventName}EventReference>();
+
+        public void Raise({raiseParameters})
+        {
+            foreach (var ev in events)
+                ev.Raise({raiseValues});
+        }
+
+        public void Suscribe(Action<{types}> callback)
+        {
+            foreach (var ev in events)
+                ev.Event += callback;
+        }
+
+        public void Unsuscribe(Action<{types}> callback)
+        {
+            foreach (var ev in events)
+                ev.Event -= callback;
+        }
+    }
+
+    [Serializable]
+    public class {eventName}Event : UnityEvent<{types}> { }
+}

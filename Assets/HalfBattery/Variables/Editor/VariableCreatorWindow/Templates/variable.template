@@ -1,0 +1,63 @@
+using UnityEngine;
+using System;
+{usings}
+
+namespace {namespace}
+{
+	[CreateAssetMenu(menuName = "{assetPath}")]
+    public class {name}Variable: ScriptableObject
+    {
+
+#if UNITY_EDITOR
+        [Multiline]
+        public string description = "";
+#endif
+
+        [SerializeField]
+        private {type} value;
+
+        public {type} Value
+        {
+            get
+            {
+                return value;
+            }
+            set
+            {
+                this.value = value;
+            }
+        }
+
+        public static implicit operator {type}({name}Variable variable)
+        {
+            return variable.Value;
+        }
+    }
+
+    [Serializable]
+    public class {name}Reference
+    {
+        public bool useConstant = true;
+        public {type} constantValue;
+
+        public {name}Variable variable;
+
+        public {name}Reference() { }
+
+        public {name}Reference({type} value)
+        {
+            useConstant = true;
+            constantValue = value;
+        }
+
+        public {type} Value
+        {
+            get { return useConstant ? constantValue : variable.Value; }
+        }
+
+        public static implicit operator {type}({name}Reference reference)
+        {
+            return reference.Value;
+        }
+    }
+}
