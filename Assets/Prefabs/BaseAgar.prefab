@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4392692930491790}
   - component: {fileID: 212406140437806432}
+  - component: {fileID: 114296585785112962}
   - component: {fileID: 114280408739231888}
   - component: {fileID: 114371929775366386}
   - component: {fileID: 114113620018170506}
@@ -77,6 +78,19 @@ MonoBehaviour:
       PublicKeyToken=null
   size: 1
   color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &114296585785112962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572995262574442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e922e97ba874c6345bb32927292ee8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  movement: {fileID: 0}
 --- !u!114 &114371929775366386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +107,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: HalfBattery.Events.FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  OnPositionChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HalfBattery.Events.Vector3Event, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   speed: 1
 --- !u!212 &212406140437806432
 SpriteRenderer:

@@ -13,6 +13,8 @@ public class MouseController : MonoBehaviour
 
     void Update()
     {
+        if (!Application.isFocused) return;
+
         var mousePosition = Input.mousePosition;
         mousePosition.z = 10;
         agarMovement.MovePosition = Camera.main.ScreenToWorldPoint(mousePosition);

@@ -1,4 +1,5 @@
 ﻿using HalfBattery.Events;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class AgarMovement : MonoBehaviour
 {
     public FloatEvent OnSpeedChange;
+    public Vector3Event OnPositionChange;
 
     public Vector3 MovePosition { get; set; }
 
@@ -34,5 +36,6 @@ public class AgarMovement : MonoBehaviour
     private void Update()
     {
         transform.position += (MovePosition - transform.position).normalized * speed * Time.deltaTime;
+        OnPositionChange.Invoke(transform.position);
     }
 }

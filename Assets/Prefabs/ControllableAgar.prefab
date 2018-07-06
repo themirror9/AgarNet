@@ -20,10 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4059242925598266}
   - component: {fileID: 212226732767306918}
+  - component: {fileID: 114743097928020432}
   - component: {fileID: 114647650191867012}
   - component: {fileID: 114241912530118692}
   - component: {fileID: 114734299229043756}
   - component: {fileID: 114562283895751044}
+  - component: {fileID: 114199303853908206}
   m_Layer: 0
   m_Name: ControllableAgar
   m_TagString: Untagged
@@ -44,6 +46,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114199303853908206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513734843759140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab97ccc6289d814ea62c5a530cb4cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Client: {fileID: 0}
+  threshold: 0.05
 --- !u!114 &114241912530118692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60,6 +75,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: HalfBattery.Events.FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  OnPositionChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HalfBattery.Events.Vector3Event, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   speed: 1
 --- !u!114 &114562283895751044
 MonoBehaviour:
@@ -106,6 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d757e0349da6b4544a1e0af678c280a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114743097928020432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513734843759140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e922e97ba874c6345bb32927292ee8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  movement: {fileID: 0}
 --- !u!212 &212226732767306918
 SpriteRenderer:
   m_ObjectHideFlags: 1
